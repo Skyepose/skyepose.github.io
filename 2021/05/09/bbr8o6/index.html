@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/apple-touch-icon-next.png">
+  <link rel="mask-icon" href="/images/apple-touch-icon-next.png" color="#222">
+
+<link rel="stylesheet" href="https://catman.app/css/main.css">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"catman.app","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="先说说为什么开发这个产品实际上我在 2019 年刚刚放出来的时候很多人就和我说，这个产品太过普通了。可能是建在了新宿，土地资源非常紧缺，加上周边住房拥挤，再多的资金也很难做出一个非常“漂亮”的产品。可我们还是决定开建了，因为这个产品的目标并不是“漂亮”而是实在。与此同时，2020 年真的是改变世界的一年，我们的客户需求也有了极大的变化，而我们需要适应这种变化。新宿一号的产品总结下来就是三个硬核、稳">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新宿一号房地产开发小记">
+<meta property="og:url" content="http://catman.app/2021/05/09/bbr8o6/index.html">
+<meta property="og:site_name" content="猫总">
+<meta property="og:description" content="先说说为什么开发这个产品实际上我在 2019 年刚刚放出来的时候很多人就和我说，这个产品太过普通了。可能是建在了新宿，土地资源非常紧缺，加上周边住房拥挤，再多的资金也很难做出一个非常“漂亮”的产品。可我们还是决定开建了，因为这个产品的目标并不是“漂亮”而是实在。与此同时，2020 年真的是改变世界的一年，我们的客户需求也有了极大的变化，而我们需要适应这种变化。新宿一号的产品总结下来就是三个硬核、稳">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1625729782683-38573a28-01d2-4b16-be2f-c99b12362638.jpeg#align=left&display=inline&height=813&id=u6597e81b&margin=%5Bobject%20Object%5D&name=%E5%85%B1%E7%94%A8%E9%83%A8%E5%88%86-1.jpg&originHeight=1627&originWidth=2552&size=888044&status=done&style=none&width=1276">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844273-bf84c3dc-31c4-4dfe-a5db-7c1fed460d4e.jpeg#align=left&display=inline&height=621&id=TyVqc&margin=%5Bobject%20Object%5D&originHeight=768&originWidth=1024&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844277-8052db4e-dbc7-4328-8061-6946894d15df.png#align=left&display=inline&height=263&id=BxaxE&margin=%5Bobject%20Object%5D&originHeight=484&originWidth=1522&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844250-4f219ac6-43e1-4b36-990a-bb5707a37f76.png#align=left&display=inline&height=267&id=V2ClL&margin=%5Bobject%20Object%5D&originHeight=490&originWidth=1520&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844349-6344fb74-f1d5-4692-8182-b16f25c458b6.jpeg#align=left&display=inline&height=527&id=ynsAA&margin=%5Bobject%20Object%5D&originHeight=764&originWidth=1200&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844356-3f68e21f-50a4-4b30-b0d0-38496af2206a.jpeg#align=left&display=inline&height=552&id=uyfro&margin=%5Bobject%20Object%5D&originHeight=853&originWidth=1280&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844383-d4567651-9906-4210-af7e-a14e18b0d97f.jpeg#align=left&display=inline&height=486&id=VfVC6&margin=%5Bobject%20Object%5D&originHeight=2384&originWidth=4064&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844292-fbc34dd3-1fb8-4889-93b9-a30f2b51e6f3.jpeg#align=left&display=inline&height=621&id=Pr7KT&margin=%5Bobject%20Object%5D&originHeight=768&originWidth=1024&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844306-ecefe194-beb4-4507-a2e5-3458c3eb87e9.png#align=left&display=inline&height=871&id=LVf6a&margin=%5Bobject%20Object%5D&originHeight=2020&originWidth=1920&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844243-d3526d3b-e6bf-4139-b8d6-7481b607e9de.jpeg#align=left&display=inline&height=633&id=w22lc&margin=%5Bobject%20Object%5D&originHeight=2112&originWidth=2764&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844292-59449798-3904-4445-ba05-a11d441f25e8.png#align=left&display=inline&height=240&id=X9kZm&margin=%5Bobject%20Object%5D&originHeight=1206&originWidth=4157&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844284-64a3e881-514c-4caf-be02-5b0eecad2fb2.jpeg#align=left&display=inline&height=552&id=BXDrZ&margin=%5Bobject%20Object%5D&originHeight=2121&originWidth=3180&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844308-7389b7d2-cb35-44aa-8014-66e1bf165244.jpeg#align=left&display=inline&height=621&id=y1MA9&margin=%5Bobject%20Object%5D&originHeight=768&originWidth=1024&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844264-7ffd79de-07df-4d9a-ae76-708d6d119a51.jpeg#align=left&display=inline&height=1241&id=XeSSE&margin=%5Bobject%20Object%5D&originHeight=3180&originWidth=2121&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844249-1f501690-6fad-4f33-8ed1-264f13e46dbc.jpeg#align=left&display=inline&height=552&id=NiGvK&margin=%5Bobject%20Object%5D&originHeight=2121&originWidth=3180&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002845318-0345c328-34c8-4001-9b78-66593a4c4043.jpeg#align=left&display=inline&height=552&id=El9DG&margin=%5Bobject%20Object%5D&originHeight=2121&originWidth=3180&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844287-5cdbcbdf-63aa-4b27-a9b0-08d7b390ce74.jpeg#align=left&display=inline&height=552&id=eHOss&margin=%5Bobject%20Object%5D&originHeight=2121&originWidth=3180&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844260-76da329d-158d-475c-869b-845d0aa5a7ea.jpeg#align=left&display=inline&height=552&id=n5LfT&margin=%5Bobject%20Object%5D&originHeight=853&originWidth=1280&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844322-54ab901b-f4bc-49d7-811f-6bd6e210a2c8.png#align=left&display=inline&height=1008&id=yWvCe&margin=%5Bobject%20Object%5D&originHeight=1008&originWidth=640&size=0&status=done&style=none&width=640">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844320-89b89522-a808-43ca-b988-e6ef8196b0b0.png#align=left&display=inline&height=1008&id=zdb3j&margin=%5Bobject%20Object%5D&originHeight=1008&originWidth=640&size=0&status=done&style=none&width=640">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844314-ecf3dc46-c77f-497f-b74d-a4374a333b45.jpeg#align=left&display=inline&height=621&id=SjF97&margin=%5Bobject%20Object%5D&originHeight=3024&originWidth=4032&size=0&status=done&style=none&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844664-c7a05993-a1c7-40e7-bb28-63e3e3810a29.jpeg#align=left&display=inline&height=5304&id=WZxzp&margin=%5Bobject%20Object%5D&originHeight=5304&originWidth=7952&size=0&status=done&style=none&width=7952">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844273-39e0ee24-693a-4796-9d2f-1049703b5f20.png#align=left&display=inline&height=512&id=DbdHJ&margin=%5Bobject%20Object%5D&originHeight=512&originWidth=512&size=0&status=done&style=none&width=512">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844537-2d31439e-bcb8-491e-8f99-b2b4609e65ff.png#align=left&display=inline&height=518&id=JmZAK&margin=%5Bobject%20Object%5D&originHeight=750&originWidth=1200&size=0&status=done&style=none&width=828">
+<meta property="article:published_time" content="2021-05-09T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-28T00:37:42.465Z">
+<meta property="article:author" content="猫总">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1625729782683-38573a28-01d2-4b16-be2f-c99b12362638.jpeg#align=left&display=inline&height=813&id=u6597e81b&margin=%5Bobject%20Object%5D&name=%E5%85%B1%E7%94%A8%E9%83%A8%E5%88%86-1.jpg&originHeight=1627&originWidth=2552&size=888044&status=done&style=none&width=1276">
+
+<link rel="canonical" href="http://catman.app/2021/05/09/bbr8o6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>新宿一号房地产开发小记 | 猫总</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <meta name="referrer" content="no-referrer" />
+
+<link rel="alternate" href="/atom.xml" title="猫总" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">猫总</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-群组">
+
+    <a href="/groups/" rel="section"><i class="fa fa-sitemap fa-fw"></i>群组</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://catman.app/2021/05/09/bbr8o6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.typlog.com/catman/8393193578_104035.jpg?x-oss-process=style/ss">
+      <meta itemprop="name" content="猫总">
+      <meta itemprop="description" content="人在陆家嘴，已经肉身移民法国和日本。海带级金融从业人员，业余金融分析师，专业母猫配种。V2EX老成员，现在已经穷的一无所有，还剩下125万贷款。我买房都是为了我的猫！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猫总">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          新宿一号房地产开发小记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-09 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-09T00:00:00+00:00">2021-05-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-28 00:37:42" itemprop="dateModified" datetime="2022-06-28T00:37:42+00:00">2022-06-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%88%BF%E5%9C%B0%E4%BA%A7/" itemprop="url" rel="index"><span itemprop="name">房地产</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="先说说为什么开发这个产品"><a href="#先说说为什么开发这个产品" class="headerlink" title="先说说为什么开发这个产品"></a>先说说为什么开发这个产品</h1><p>实际上我在 2019 年刚刚放出来的时候很多人就和我说，这个产品太过普通了。可能是建在了新宿，土地资源非常紧缺，加上周边住房拥挤，再多的资金也很难做出一个非常“漂亮”的产品。可我们还是决定开建了，因为这个产品的目标并不是“漂亮”而是实在。与此同时，2020 年真的是改变世界的一年，我们的客户需求也有了极大的变化，而我们需要适应这种变化。新宿一号的产品总结下来就是三个硬核、稳定、够得着。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1625729782683-38573a28-01d2-4b16-be2f-c99b12362638.jpeg#align=left&display=inline&height=813&id=u6597e81b&margin=%5Bobject%20Object%5D&name=%E5%85%B1%E7%94%A8%E9%83%A8%E5%88%86-1.jpg&originHeight=1627&originWidth=2552&size=888044&status=done&style=none&width=1276" alt="共用部分-1.jpg"></p>
+<h3 id="一个硬核的产品"><a href="#一个硬核的产品" class="headerlink" title="一个硬核的产品"></a>一个硬核的产品</h3><p>我觉得这个可能是目前中资开发商缺少的一类物件，毕竟大部分人还是在押注日本旅游产品。但是这个产品和一些高度依赖旅游或者观光的产品不同，这个产品非常硬核，租客就是东京本土非常庞大的人流。没有包租没有额外的小费，就是一个非常普通的东京单身公寓项目。租客的租约大多都在 2 年以上，租客固定缴纳租金，房东固定收取租金，一切都是非常合理。而最硬核的莫过于整个开发流程中，我们全部是自有资金，没有任何贷款，使得这个产品的杠杆非常低。</p>
+<h3 id="一个安稳的产品"><a href="#一个安稳的产品" class="headerlink" title="一个安稳的产品"></a>一个安稳的产品</h3><p>2020 年这一年实在太过疯狂了，全球范围内正经历着二战以来最大的衰退。香港也成了中美冲突的牺牲品，而我们也永远失去了一个非常好的投资品————香港保险。而很多发达国家也纷纷太高投资门槛甚至对华人投资者采取了非常极端的措施。乱世之中，我们真的需要稳中求稳，即使是在比较光明的 2021 年也仍然有很多不确定性。所以我们这个产品选在了新宿，并且定位就是普通的居住型房产。面向的人群还是中小投资者以及在东京的普通消费群体。</p>
+<h3 id="一个够得着的产品"><a href="#一个够得着的产品" class="headerlink" title="一个够得着的产品"></a>一个够得着的产品</h3><p>我们把价格控制到了 200 万人民币以内，这个东京非常不容易，我强调够得着是因为今年大家收入基本都是锐减的。高产变中产，中产变低产，低产最后返贫。不仅仅是在中国， 全球范围内的房地产投资潜在客户都出现了收入锐减，东京的很多华人现在获批银行贷款也非常困难，很多人不得已只能选择降低投资目标，说白了就是消费降级。而这款产品的设计之初就是希望大家都够得着。而我们的售价也锁定了在了 2160 万日元起步，目标就是小微投资者。</p>
+<h2 id="从一块土地开始"><a href="#从一块土地开始" class="headerlink" title="从一块土地开始"></a>从一块土地开始</h2><p>2019 年开始，我们就准备开始筹划这个项目。当时在东京和大阪之间犹豫，最后还是选了东京，主要看中的还是东京超强的抗风险能力和庞大的经济体量。但是后面的问题也随之而来，东京做一个项目的成本和时间远远超出了我们的想象，作为一个刚刚起步的小型不动产公司，在东京搞一栋楼真的太困难了。</p>
+<h3 id="地段！地段！还是地段！"><a href="#地段！地段！还是地段！" class="headerlink" title="地段！地段！还是地段！"></a>地段！地段！还是地段！</h3><p>在哪里投资是一个需要谨慎考虑的事情，走出的第一步可能就决定了未来的结局。在日本开发有一个奇怪的规律，那就是越靠近核心区域，收益率越稳定，但是开发利润就越低，租金回报率也越低。这是一个非常有趣的事情，这意味着在选址的时候就要仔细权衡风险和收益。未来是不可控的，尤其是在 2020 年这个时间，我相信很多客户也体验了一把真正的<strong>系统性风险</strong>。举个例子，如果 2020 年你提前知道了世界会是这个样子，你肯定不会在 2019 年去投资富士山的旅馆。但是在 2019 年谁会去想这些事情，作为一个刚刚来日本创业没多久的团队，我们还是选择了东京新宿。毕竟这里开发物业最大的好处就是地价非常稳定，而且租金稳定。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844273-bf84c3dc-31c4-4dfe-a5db-7c1fed460d4e.jpeg#align=left&display=inline&height=621&id=TyVqc&margin=%5Bobject%20Object%5D&originHeight=768&originWidth=1024&size=0&status=done&style=none&width=828"><br>而在选择土地过程中，我们也意外发现了日本土地价格的一个<strong>长周期的马太效应</strong>。那就是如果把地价的历史时间拉长，你会发现，都市区域的核心价格地段一直都是平稳上涨的，及时有波动略微下降，未来还是会涨回来。而非核心的乡村地区，即使被短暂地炒得很高，未来还是会降下来。原因很简单——年轻人永远都只会向城市进发。<br>比如<strong>新宿的历史地价</strong>就是下面一条线。<br><img src="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844277-8052db4e-dbc7-4328-8061-6946894d15df.png#align=left&display=inline&height=263&id=BxaxE&margin=%5Bobject%20Object%5D&originHeight=484&originWidth=1522&size=0&status=done&style=none&width=828"><br>相比当时的备选地区群马县，你会发现<strong>群马县历史地价</strong>就是这么一条趋势向下的直线。无论温泉多么出名，还是免不了长周期的下滑。<br><img src="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844250-4f219ac6-43e1-4b36-990a-bb5707a37f76.png#align=left&display=inline&height=267&id=V2ClL&margin=%5Bobject%20Object%5D&originHeight=490&originWidth=1520&size=0&status=done&style=none&width=828"><br>但是正如我之前说的，这其实有利有弊，因为对于土地开发投资者来讲，开发利润也是一个非常值得思考的问题。新宿地区项目的开发毛利润普遍只有 20%（到了银座可能更低），还得刨除各类税费以及销售成本，最后拿到也就 7%不到（还不算请客喝酒的钱），佣金不高有可能连各类中介渠道都不肯帮你卖（人家都是看钱办事的）。这个对于开发商商来讲是极具挑战的，一定要资金量大，才可以勉强用规模效应来实现利润。这也是为什么周围全是三井不动产公司开发的塔楼，就是因为本土开发商的资金量大，能够实现规模效应。<br>而在群马县，开发利润可以轻易超过 50%，但是正如我所说的，如果把时间拉长，普通投资者买了以后，就会觉得非常不爽，未来一旦管理不好，就基本成空宅了（目前日本最严重问题）。这也是为什么我们一直不敢出东京和大阪，日本资产的抗风险只有在这些大城市的物业里才可以得到体现。<br>在如今全球政治经济极度紧张的时刻，东京超强的抗风险得到了极大的体现，无论疫情如何肆虐，中国和西方斗得如何激烈，东京长租公寓在租金和价格上仍然不动如山。为什么？因为东京是刚需，汇集全日本 1/4 的 GPD，1400 万人口，日本所有的优质就业机会、最好的发展前途都在这里，<strong>要发展就只能来东京，回老家只能卖铜锣烧</strong>。2020 年，在全球各类资产不断下滑的情况下东京凭借大量避险资金涌入，<a target="_blank" rel="noopener" href="https://www.sankei.com/economy/news/201205/ecn2012050013-n1.html">房地产交易量再次成为世界第一</a>。所以选择新宿也算是押对了一个时代。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844349-6344fb74-f1d5-4692-8182-b16f25c458b6.jpeg#align=left&display=inline&height=527&id=ynsAA&margin=%5Bobject%20Object%5D&originHeight=764&originWidth=1200&size=0&status=done&style=none&width=828"></p>
+<h3 id="日式人情交易和市场化的土地"><a href="#日式人情交易和市场化的土地" class="headerlink" title="日式人情交易和市场化的土地"></a>日式人情交易和市场化的土地</h3><p>在新宿找了好久，找到了一块还不错的土地，这块地坐落在北新宿 3 丁目 12 番 7 号。Google 地图上标注的非常清楚，前后离新宿站不到 2KM。有 2 条地铁直接穿过路边分别是中央線以及総武線，旁边的新大久保站还有 2 条铁路分别是 JR 山手線以及 JR 埼京線，真的是绝佳宝地。土地面积有 200 多平方米，在这寸土寸金的新宿已经非常不容易。<br>确认了位置以后，接下来就是开始和土地卖家谈判了。此时我们才知道日式买卖文化的可怕，整个流程和中国的酒桌文化如出一辙，那就是喝酒！喝酒！再喝酒！为什么会这样子？土地市场不是私有的吗？其实仅仅是表面上的“私有”，整个日本核心 5 区的土地都掌握在类似三井和三菱这样的财团手里。优质的空地需要有多个介绍人一环扣一环介绍，于是就出现了一个奇葩事情。那就是我们的宅建士在谈土地的 3 个月里不是正在喝酒就是在喝酒的路上，日本的烧酒真的度数非常高，往往喝了以后就只能倒地不起，第二天的工作是无法进行的。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844356-3f68e21f-50a4-4b30-b0d0-38496af2206a.jpeg#align=left&display=inline&height=552&id=uyfro&margin=%5Bobject%20Object%5D&originHeight=853&originWidth=1280&size=0&status=done&style=none&width=828"><br>所以在那段时间里，很多客户都在抱怨，为什么我们的一般交易也出现了推迟？宅建士为什么一直醉酒误事？而资方也抱怨，为什么我的钱先必须用来垫酒水钱？其实这个是日本行业内的正常现象，如果要搞到一块好的土地必须通过内部非公开物件信息才可以获得。<strong>尤其是在东京购买裸地，是不可能直接从 SUMO 上直接搞定的</strong>，都是靠所谓的人情关系才可以最终敲定。运气好的，最终中间商可以帮你介绍关系拿到好的地。运气不好的，有可能资方的资金的一部分就用来当作人情消费了，而业界历史上也有很多情况下，资方的资金都消耗超过 10%，最后中间商还是不肯给介绍土地的案例，这笔钱最后也只能打水漂了。好在我们的运气非常好，拿到了土地，但是这个仅仅是万里长征的第一步。</p>
+<h3 id="土地上永远有上古遗产"><a href="#土地上永远有上古遗产" class="headerlink" title="土地上永远有上古遗产"></a>土地上永远有上古遗产</h3><p>东京新宿地区早在上世纪 60 年代土地和住宅市场就已经完全饱和了，基本上旧建筑比比皆是，不可能像大阪一样偶尔可以拿到没有任何残留建筑的光秃秃的土地。但是在新宿拆房子与在大阪拆房子相比要困难 100 倍。众所周知，大阪人是非常奇特的物种，他们并不是日本人，特别喜欢热闹，拆房子偶尔过分一点也无所谓。但是东京新宿不一样，附近都是正常的日本人，邻居要一个一个跑，一个一个解释，并且签了一份又一份保证书。拆除的时候一定要用一口像棺材一样的黑色罩子死死地包住，不发出一点声音。经过一顿操作之后，最后终于得到了一块杂草丛生的地块。此时已经是 2020 年 3 月份了，而我们发现光保证说明和各类琐碎的小事就足够消耗长达 3 个月以上的时间。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844383-d4567651-9906-4210-af7e-a14e18b0d97f.jpeg#align=left&display=inline&height=486&id=VfVC6&margin=%5Bobject%20Object%5D&originHeight=2384&originWidth=4064&size=0&status=done&style=none&width=828"><br>很多人不理解，为什么这么一块地要折腾这么久。其实这样的问题在大阪也非常普遍，没有建筑的土地要比有建筑的土地贵很多，因为上面的建筑拆除有时候是一笔巨大的开支，要耗费大量的时间和精力。而在东京，基本找不到所谓的裸地，毕竟在这寸土寸金的地方，一块土地可能从神武天皇开始到现在已经被无数开发商轮奸过很多遍了，拿到的土地都是有建筑的需要进行二次清理。</p>
+<h3 id="一张争论了很久的图纸"><a href="#一张争论了很久的图纸" class="headerlink" title="一张争论了很久的图纸"></a>一张争论了很久的图纸</h3><p>接下来，要造什么？东京和大阪最大的不同就是对于土地的严格管理。在大阪，一块土地变成一户建以后，可以用民宿、长租公寓、办公室 3 种用途，自由度非常高。但是到了东京建筑性质就基本在建筑计划拟定的时候就被锁死了，<strong>计划建造公寓就是公寓，计划建造旅馆就是旅馆，而且无法做民宿</strong>。 这里要说明一下，东京造了酒店是无法切换成住宅公寓的，除非你把前台和拆除和改造，并且将消防和信箱弄好。造了公寓也无法中途改为酒店，因为施工工程图纸和邻居的保证书在施工前早就签订，根据相关法律是无法变更的。所以开发风险还是很大的，并不是像国内那样随心所欲。<br>思来想去，觉得要平衡一下大阪和东京的产品比例，最后选择了进入东京的长租公寓市场。这个决定在 19 年可能是非常不被看好的，因为那时候整个日本的旅游业再创新高，东京的奥运会也即将在 2020 年举办。但是我们也始终担心当时的贸易战会导致中美脱钩后国人消费会一蹶不振（这个风险是在 2019 年的判断，那时候还不知道会是新冠病毒），而长租业务确实是整个东京最抗风险的产品。<br>当然，当时我把设计图纸放到网上的以后，遭到了很多推友的吐槽，因为很多人都觉得这个是莫大的浪费，这块土地应该用来造塔楼或者至少是高级公寓而不是一个消费降级产品。但是核算了一下成本，发现如果设计成 8 层以上的高级公寓，每间房子的单价可能超过原来的两倍，基本在新宿这类房子都要 5000 万日元起步，我最担心的就是最后大家都买不起了。而且新宿那里建筑密度极大，我仔细看了周围，楼下可能连给 12 个人停自行车都困难。如果要造高级公寓，肯定要造地下停车场，这个在当时是一个非常不现实的想法。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844292-fbc34dd3-1fb8-4889-93b9-a30f2b51e6f3.jpeg#align=left&display=inline&height=621&id=Pr7KT&margin=%5Bobject%20Object%5D&originHeight=768&originWidth=1024&size=0&status=done&style=none&width=828"></p>
+<h3 id="贷款风波"><a href="#贷款风波" class="headerlink" title="贷款风波"></a>贷款风波</h3><p>在 2019 年的时候，确实讨论贷款是一件非常有意义的事情，因为那时候日本的贷款虽然收紧，但是对于一般永久居留持有者以及大型的公司还是放的挺开的，贷款利率低，很多公司得以利用超高杠杆在日本获得极大的收益。我们当时也在考虑这一块，这样子可能会有更多的资金的可以造更好更奢华的东西，就像大阪的一户建一样（颜值确实很高）。但是就算在疫情之前，我们普遍认为杠杆是个非常危险的东西， 毕竟国内的 P2P 和各种烂尾楼事件在当时已经层出不穷。当时工商银行日本分行最高可以批 100 万美元的法人担保贷款。但是在各种利弊的权衡之下，选择了不贷款。当然，我们当时贷款的利率也很高，如果日后销售困难，贷款利息会形成巨大的压力。<br><img src="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844306-ecefe194-beb4-4507-a2e5-3458c3eb87e9.png#align=left&display=inline&height=871&id=LVf6a&margin=%5Bobject%20Object%5D&originHeight=2020&originWidth=1920&size=0&status=done&style=none&width=828"><br>真正让我们觉得害怕的莫过于后来在 3 月份爆发的新冠病毒，当时整个日本的旅游业被瞬间归 0，很多开发商的资金被直接拦腰截断，大量项目被银行收走拍卖。而疫情期间发生了一起不小的事故，也让我们清楚地见识到了这类杠杆的威力。可以参见<a target="_blank" rel="noopener" href="http://cn.chinadaily.com.cn/a/202006/22/WS5ef16edea310a859d09d3be1.html">日本花筑业主称携程拖欠房租，无力还贷恳请携程退租</a>。但是这个也不能怪开发商，因为当时谁都无法预料到 2020 年会有 Covid19 这么一出戏，如果一切安好，这些项目的回报率绝对是非常可观的。<br>在这里我真的非常感谢广大推特上的朋友，2020 年初提早一个月及时发布了疫情通知，让我们能够有足够的时间准备和思考这场世纪大危机，能够躲过这一劫也算运气。</p>
+<h2 id="艰难的建造流程"><a href="#艰难的建造流程" class="headerlink" title="艰难的建造流程"></a>艰难的建造流程</h2><p>不多说了，刚刚开建就碰上新冠，紧急事态宣言的那些日子里真的非常难过，我的心理压力也非常大。原本不少客户当时都准备预订我的新房，但是后面我还是先暂时 Hold 住。基于当时 3 月份的疫情走势，我认为有 3 点风险：</p>
+<ul>
+<li>当时疫情非常严重，我担心项目有相当大的风险，万一真的烂尾就麻烦了；</li>
+<li>如果未来造的好，东京这么高的人口密度会不会出现纽约这样的骚乱情况，到时候出租怎么办；</li>
+<li>流动性极高的东京房地产是否会因为疫情受到极大的冲击，到时候物件流动困难：</li>
+</ul>
+<p>虽然后来东京靠极大的经济实力和全日本超高的素质扛过了疫情，但是在 3 月份当时确实很难判断。所以我们还是最终决定<strong>建好了再卖</strong>，尽可能不要把风险留给各位，结果这一拖就拖到了年底。幸运的是，建造好了，而且东京还是那个东京，留学生数量反而因为中美关系恶化增多了。新宿地区还是和以前一样，非常繁忙，出租市场依旧火爆。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844243-d3526d3b-e6bf-4139-b8d6-7481b607e9de.jpeg#align=left&display=inline&height=633&id=w22lc&margin=%5Bobject%20Object%5D&originHeight=2112&originWidth=2764&size=0&status=done&style=none&width=828"></p>
+<h3 id="先说说我们的底料"><a href="#先说说我们的底料" class="headerlink" title="先说说我们的底料"></a>先说说我们的底料</h3><p>完工的那一天，我总算是松了一口气，对比了一下当时楼书和计划图。差别不是很大。我们当时设计了 ABCD 一共 4 个户型，我们也遵循 ONE ROOM 公寓条例（每 4 个房间一个必须超过 30 平米）。我们的 A 户型有 30 平米，就是遵守了 ONE ROOM 公寓条例。为什么东京核心区会有这个奇妙的 ONE ROOM，其实是为了防止东京地区大量单身公寓造成单身人口，强制性规定每层楼必须建造一个 30 平米以上的房间，供小夫妻两口居住。我妈当时听了以后惊讶了，为什么东京 30 平米的房子就可以当婚房了，我还不如直接娶日本媳妇。确实在新宿 30 平米可以当婚房了，不信各位可以去推特上问问，那些在新宿的留学生和社畜住的窝有多大。东京这个情况和香港的笼屋如出一辙，高密度建筑下大城市病的必然产物。<br><img src="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844292-59449798-3904-4445-ba05-a11d441f25e8.png#align=left&display=inline&height=240&id=X9kZm&margin=%5Bobject%20Object%5D&originHeight=1206&originWidth=4157&size=0&status=done&style=none&width=828"><br>实际上走到走廊上上，发现其实还算好，走廊宽敞，比起香港的笼屋好很多了。我一直喜欢拿东京对比香港，因为同样是这么高的人口密度，东京的房子比香港“宽敞”很多。毕竟东京之外还有很多土地，只要地铁够得着，可以一圈一圈往外扩（可能需要十几年才有一个圈）。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844284-64a3e881-514c-4caf-be02-5b0eecad2fb2.jpeg#align=left&display=inline&height=552&id=BXDrZ&margin=%5Bobject%20Object%5D&originHeight=2121&originWidth=3180&size=0&status=done&style=none&width=828"><br>完工后，我邀请了很多东京当地的人过来看房子，大部分人看了说很像压缩饼干。确实，如果把这套房子比喻成一碗真正意义上的拉面，那么我们的外表确实毫无吸引力，真正能拉开一点差距的还是内部的“卤蛋”。</p>
+<h3 id="再说说我们加的卤蛋"><a href="#再说说我们加的卤蛋" class="headerlink" title="再说说我们加的卤蛋"></a>再说说我们加的卤蛋</h3><p>我为什么说加卤蛋，其实这个是我从大阪的一家拉面店里得到的灵感。在大阪，一蘭拉面一直站在顶端，给很多小品牌拉面店老板形成巨大的压力。有一次在路边一家面馆吃面的时候看见老板一个人往锅里塞了一大只鸡，一大块猪肉，最后熬出浓郁的汤汁，汤底塞了颗卤蛋，给我们端上来。这就是一般小面馆的生存之道，如果要和顶级的品牌竞争，唯一的办法就是多加些配菜，多加一颗卤蛋。我没和老板攀谈许久，他也直言日本拉面市场竞争激烈，如果不加颗卤蛋很难在市场生存。而老板的拉面店能屹立不倒也是靠这颗卤蛋在生存。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844308-7389b7d2-cb35-44aa-8014-66e1bf165244.jpeg#align=left&display=inline&height=621&id=y1MA9&margin=%5Bobject%20Object%5D&originHeight=768&originWidth=1024&size=0&status=done&style=none&width=828"><br>而对比我们所在的东京长租公寓市场，不仅有三井和三菱两大巨头，还有狮王等优质品牌。和他们比起来，我们就是路边的一家无名的拉面馆，<strong>要想生存，必须多加些卤蛋，留住客户</strong>。而实际上我们卤蛋还算加多了，我觉得一共放了 4 颗卤蛋。但是卤蛋毕竟是卤蛋，不是什么大的东西，因为东京新宿的住房资源比大阪紧张很多，我基本也只能在一些细节上稍微多一些料，不可能在这里整出个空中庭院。 为了可以让大家更好地浏览这个产品，我们也准备了全景 VR 导览图。</p>
+<h3 id="一体化厨房"><a href="#一体化厨房" class="headerlink" title="一体化厨房"></a>一体化厨房</h3><p>我们为大家准备了一个还算不错的厨房，其实和大阪的设计是一模一样的，就是之前大家非常中意的一体化厨房。但是在东京由于各种原因，我们不得不缩水了一些，毕竟条件真的非常有限，在 20 平米的房子里塞下这些真的不容易。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844264-7ffd79de-07df-4d9a-ae76-708d6d119a51.jpeg#align=left&display=inline&height=1241&id=XeSSE&margin=%5Bobject%20Object%5D&originHeight=3180&originWidth=2121&size=0&status=done&style=none&width=828"></p>
+<h3 id="告别蜷曲的浴缸"><a href="#告别蜷曲的浴缸" class="headerlink" title="告别蜷曲的浴缸"></a>告别蜷曲的浴缸</h3><p>终于，告别了樱桃小丸子那样的蜷曲式浴缸，如果在新宿租过房子的就知道，蜷曲式浴缸是一个非常普遍的情况，基本上就是要把你塞进一个木桶里。而我们的浴缸做到了接近大阪一户建的比例。虽然不是全尺寸，但至少人可以正常躺下去了，这真的已经是非常大的进步。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844249-1f501690-6fad-4f33-8ed1-264f13e46dbc.jpeg#align=left&display=inline&height=552&id=NiGvK&margin=%5Bobject%20Object%5D&originHeight=2121&originWidth=3180&size=0&status=done&style=none&width=828"></p>
+<h3 id="干湿终于完全分离"><a href="#干湿终于完全分离" class="headerlink" title="干湿终于完全分离"></a>干湿终于完全分离</h3><p>干湿分离是日本装修设计的标准呢，但是这个标准真的要撇开东京核心地区，因为建筑结构的原因，很多核心区单身公寓都是淋浴+马桶一体化的设计。我们还是把这些东西硬塞了进去，在 20 平米的小房间里做到了真正的干湿分离。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002845318-0345c328-34c8-4001-9b78-66593a4c4043.jpeg#align=left&display=inline&height=552&id=El9DG&margin=%5Bobject%20Object%5D&originHeight=2121&originWidth=3180&size=0&status=done&style=none&width=828"></p>
+<h3 id="我们多送了一个阳台"><a href="#我们多送了一个阳台" class="headerlink" title="我们多送了一个阳台"></a>我们多送了一个阳台</h3><p>2 ～ 3 平米，还算 OK，而且有太阳。功能不算很多，基本只可以和动漫里一样，出去看个风景。但是已经很不错了，至少多出了一个阳台，比起对面的棺材房终于看上去不怎么像棺材。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844287-5cdbcbdf-63aa-4b27-a9b0-08d7b390ce74.jpeg#align=left&display=inline&height=552&id=eHOss&margin=%5Bobject%20Object%5D&originHeight=2121&originWidth=3180&size=0&status=done&style=none&width=828"></p>
+<h2 id="市场表现"><a href="#市场表现" class="headerlink" title="市场表现"></a>市场表现</h2><p>造好了万事俱备，看上去只欠东风，进入了销售环节。正如我之前所说的，如果今年没有新冠，这玩意还真的很难卖，因为大部分客户都去玩富士山和北海道了，东京公寓抗风险的能力是无法体现的，大家也不知道什么是风险。新宿作为东京的核心行政区，一直都是房子租人而不是人租房子的情况，空室率一直很低，基本上我们很快就塞满了 6 个租客。但是为了能够保证其他客户自住的需求，我们还是空了 6 个供给自住客户选择。所有东京房地产客户的在 2020 年对东京不动产的评价都是一致的：“东京公寓，真 TMD 耐操！”没错，这类资产最大的特点就是“耐操”，而这种耐操真的只能在如今这个危机局势下可以体现出来。<br>但是这个我们的这个产品表现究竟如何，要从租客、投资者、渠道、资方、猫总本身多种方位去考虑。</p>
+<h3 id="蜂拥而来的租客"><a href="#蜂拥而来的租客" class="headerlink" title="蜂拥而来的租客"></a>蜂拥而来的租客</h3><p>出租环节真的出乎我的意料，行情居然这么好，真的不担心出租问题，出租毫无压力，基本挂上去秒租，新宿再一次证明了自己是刚需中的刚需。我们的首选租客还是<strong>日本本土有保证公司的职员</strong>，工作稳定而且素质高。我们的房屋租金也不贵，大概在 9 万日元～ 13 万日元，保证房屋的名义投资回报率在 5%左右。未来可能会租给一些名校的留学生（附近有早稻田大学）。留学生价格贵一些，毕竟他们只有学校担保，没有保证公司。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844260-76da329d-158d-475c-869b-845d0aa5a7ea.jpeg#align=left&display=inline&height=552&id=n5LfT&margin=%5Bobject%20Object%5D&originHeight=853&originWidth=1280&size=0&status=done&style=none&width=828"></p>
+<h3 id="渠道和中介之苦"><a href="#渠道和中介之苦" class="headerlink" title="渠道和中介之苦"></a>渠道和中介之苦</h3><p>拿给其他中介和渠道的一瞬间，大家都疑惑了。为什么？因为我们意外的发现，<strong>今年我们是北新宿地区唯一开盘的普通住宅公寓</strong>。在众多业者还在饱受资产荒的时代，居然有这个东西，确实很难得。新宿区已经好久没有这类新公寓出场了，基本都是老破小，这可能是好事，但是也可能是一个坏事。 说这是好事，是因为以下几点：</p>
+<ul>
+<li>这个产品投资回报稳定，是疫情期间的投资佳品；</li>
+<li>产品中规中矩，虽然普通但是很实用；</li>
+<li>这是一个现房，可以直接拿到手，风险比期房小很多；</li>
+</ul>
+<p>但是在真实的环节中我们也发现了这么几问题：</p>
+<ul>
+<li>新宿地区开发利润比外圈低很多，很多销售觉得没有动力，产生了加价争议；</li>
+<li>中国很多投资者的对于高利润的欲望还是没有降低，对于高杠杆和高利润产品的偏好还是很强；</li>
+<li>大家还是喜欢看颜值，东京圈内的房产就算是新房卖相也不如周边偏远地区的同类公寓；</li>
+</ul>
+<p>这也是一个非常大的问题，整个 2020 年明明是考虑避险的一年，但是市场貌似还是没有被纠正过来。大概是国内疫情控制的太好，很多投资者仍然想要押注 2021 年的疫苗后的世界。好在本土仍然有很多的刚需住房客户以及一些中小投资者还是比较谨慎，非常愿意选择这些房地产。 但是这也给我造成了比较大的压力，因为这个东西销售利润太低。而国内此时虽然因为疫情和贸易战，美英澳加等国的产品出现了滞销。但是我们却在面临另一个强劲的对手，那就是东南亚房地产，超低的价格，以及超高的开发利润（超过 100%）使得销售在更多的时候更加愿意向愿意在东南亚项目上拼命。所以我说过，开发利润是也是一个非常重要的因素，<strong>没有开发利润并不意味着客户能得到实惠，资本市场还是要看结果说话。</strong></p>
+<h3 id="一个不错的拼多多想法"><a href="#一个不错的拼多多想法" class="headerlink" title="一个不错的拼多多想法"></a>一个不错的拼多多想法</h3><p>此时，我突然把目光转向了我自己的猫总平台。长达 8 年时间的积累以及目前独特的直销模式也许可以在这里探索出新的思路。毕竟在互联网渠道比起传统直销渠道最大的好处就是销售成本低。于是就有了今天这个拼多多模式。这个模式最大的好处就是在凑满人头后，可以向老板要一个稍微好一点的价格。这可能是一个趋势，除了新宿一号，未来同行以及我们本身都要在东京开发类似项目，都面临开发利润低，难以承担国内外高昂销售成本的情况。如果这个模式可以铺开来，房产领域的拼多多有可能成为一个新的趋势。但是这个也要谨慎，一旦出现假冒伪劣产品不堪设想。<br><img src="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844322-54ab901b-f4bc-49d7-811f-6bd6e210a2c8.png#align=left&display=inline&height=1008&id=yWvCe&margin=%5Bobject%20Object%5D&originHeight=1008&originWidth=640&size=0&status=done&style=none&width=640"><img src="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844320-89b89522-a808-43ca-b988-e6ef8196b0b0.png#align=left&display=inline&height=1008&id=zdb3j&margin=%5Bobject%20Object%5D&originHeight=1008&originWidth=640&size=0&status=done&style=none&width=640"></p>
+<h3 id="左右资本"><a href="#左右资本" class="headerlink" title="左右资本"></a>左右资本</h3><p>最后说说在资本回报这里，实际上，在我这么长的时间里，有很多客户都想问我，日后能不能进入我们公司的内部资本，去开发各类项目。我非常感谢诸位的资金，但是正如我之前所说的，日本的开发整个流程其实都是风投，<strong>很多人都是冲着 100%的利润来了，根本没有做好 100%亏损的准备</strong>。在说整个资本的情况之前，我先让各位看看目前市场的一些情况。<br>就在不久之前，我们北上富士山看了一圈，实际上新冠疫情对整个行业的冲击远远超乎我们的想象。正如我之前说的，疫情对于一些纯旅游类资产是灭顶之灾。但是，在东京的周边偏远地区也出现了不少空租现象，大阪核心区的一些办公楼也出现了白菜价的情况，新宿的住宅能够扛住这次疫情是非常优秀的表现，但是我觉得更多的是一种侥幸。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844314-ecf3dc46-c77f-497f-b74d-a4374a333b45.jpeg#align=left&display=inline&height=621&id=SjF97&margin=%5Bobject%20Object%5D&originHeight=3024&originWidth=4032&size=0&status=done&style=none&width=828"><br>为什么说是一种侥幸？因为资本回报的表现优秀与否是一个<strong>动态的评估</strong>。新宿一号的开发资本的回报非常低，但是相应的风险其实小很多，而我们在初期的 0 杠杆处理也使得这个项目风险极大地降低了。有人说我们太过小心，但是这也是为所有人考虑，毕竟谁都不希望 2020 年在推特上听到的第一个消息就是：猫总欠了一屁股债，弄了一个烂尾楼，带着发情的小母猫跑了。<br>在这一年里，我没见过了无数同业项目半途而废，有的老板背负巨大贷款，项目被银行抵押收走（收走后被廉价拍卖人财两空）。东京周围热闹的导游村也成了空宅，很多人失业饱受痛苦，房东不得减租维持生计。而我们的新宿一号，<strong>做到了没有烂尾，没有出租金下滑也没有出现资金断裂</strong>，这算是非常不错的表现。<br>但是如果穿越到平行宇宙，没有疫情的 2020 年，在灿烂的阳光下，游客蜂拥而至，东京奥运会成功举办，世界一片欣欣向，这个资本回报率真的可能还不如去工商银行买个理财来得划算。可惜，凡事没有如果我们面临着 2021 这个更加不确定的未来，如果看不到希望，我们的下一步开发趋势可能还是复刻新宿一号的保守战略。</p>
+<h3 id="困惑的投资者"><a href="#困惑的投资者" class="headerlink" title="困惑的投资者"></a>困惑的投资者</h3><p>在销售的过程中，我一直在倾听投资者的声音。听到的最多的还是抱怨<strong>这个产品的性价比不高</strong>。为什么这么小？不能移民？在福冈好像只有 500 万日元吧？这也是目前很多投资者的反馈，因为在国内住习惯了 100 多平米的大房子，看惯了中国几十年的房地产增长奇迹，很难理解为什么东京的市场都是这些 J8 玩意。<br>在很长的时间里我也发现了很多客户仍然偏好很多日本周边免费的房子，认为这些东西的“性价比”好像非常高。但是“性价比”这个东西真的是一个非常模糊的东西，很多人在贪恋性价比的时候往往都是捡了芝麻丢了西瓜。就像当年那些到周边淘免费房子的那些人可能不知道，为什么这些房子是免费的？因为没人住，而且日本房地产市场有着高昂的房产税，租不出去就是烂在手里的负资产。<br>而最近一直谣传所谓的搬离东京的那些言论在推特上也很多。但是这也是东京一个有趣的地方，当年 311 大地震，也是很多人在喊着要搬离东京，要去一个“性价比”更高的地方居住，但是结果是大家还是逃不出东京的魔抓，东京最后还扩大了一圈。因为东京垄断了几乎全日本所有的发展机会，年轻人想要发展根本毫无办法，只能选择继续留在东京,所以投资东京其实是最无脑的性价比之选。<br>新宿一号这个产品显然不是为了追求这个所谓的“性价比”而打造的产品，这个产品的主打特色还是稳定和高流动性。稳定不用我多说，就算未来发生台海战争，中国人永远来不了日本，新宿一号也不会有任何影响，有东京超高的经济密度和人流来支撑租金和地价很难波动。高流动性其实很简单，对于一些资金不足的客户，可能这个产品是一个很好过渡投资品。毕竟门槛低，投资方式容易，5%的名义回报率在今天看来也是 OK 的，未来不想要了也可以快速转手，是试错成本最低的投资方式。同样的建筑如果放在了福冈或者其他地方确实价格低很多，但是绝对无法扛得住今天这种系统性风险。<br>至于想移民日本的客户，我只能告诉您，目前我们的移民产品还是 500 万人民币起投，1000 名咨询客户里，有钱有能力有胆量走出这一步的客户就这么几个。新宿一号是一个非常现实的投资，因为我相信大多数人离所谓的移民还很远，前期的海外资产投资积累远远比未来能一举搬家重要。。<br><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/21788621/1624002844664-c7a05993-a1c7-40e7-bb28-63e3e3810a29.jpeg#align=left&display=inline&height=5304&id=WZxzp&margin=%5Bobject%20Object%5D&originHeight=5304&originWidth=7952&size=0&status=done&style=none&width=7952"></p>
+<h2 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h2><p>在这之前，无数的大佬在日本买地造楼，无数的的中资项目拔地而起，无数人夸下海口要买下整个日本。但是在日本财团巨大的资金洪流面前，发现自己也不过是沧海一粟。当我们也把几个亿日元扔进东京的滚滚洪流之中，发现其实连个水花都没有，这让我们瞬间感受到了自身是如此的渺小，也更让我感受到日本的作为世界第三大强国的可怕实力。<br>身处 2020，当全球被疫情的阴影笼罩，中美之间各种较量暗流涌动，我们感叹自己遇上了一个不好的时代。但是看到日本市场的井然有序，我们也庆幸在这混乱的纪元，能够在家门口就找到一片宁兴的避风港。<br>这份开发手记不仅仅是写给后面要来东京买地开发的开发新手，也是让希望所有普通投资者可以更加清楚我们在幕后的工作。也许只有更好地了解彼此，未来才可以有更多的合作。最后说一下，这个项目仍然可以销售，如果想要买的，可以<a target="_blank" rel="noopener" href="https://jinshuju.net/f/c3zyug">点击此处</a>或者扫描一下下面的二维码向我们索要资料。<br><img src="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844273-39e0ee24-693a-4796-9d2f-1049703b5f20.png#align=left&display=inline&height=512&id=DbdHJ&margin=%5Bobject%20Object%5D&originHeight=512&originWidth=512&size=0&status=done&style=none&width=512"><br><img src="https://cdn.nlark.com/yuque/0/2021/png/21788621/1624002844537-2d31439e-bcb8-491e-8f99-b2b4609e65ff.png#align=left&display=inline&height=518&id=JmZAK&margin=%5Bobject%20Object%5D&originHeight=750&originWidth=1200&size=0&status=done&style=none&width=828"></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/04/7asl7x/" rel="prev" title="全球投资移民指南">
+      <i class="fa fa-chevron-left"></i> 全球投资移民指南
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/09/vxqk9v/" rel="next" title="一份完整的日本房地产投资指南">
+      一份完整的日本房地产投资指南 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%88%E8%AF%B4%E8%AF%B4%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80%E5%8F%91%E8%BF%99%E4%B8%AA%E4%BA%A7%E5%93%81"><span class="nav-number">1.</span> <span class="nav-text">先说说为什么开发这个产品</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%A1%AC%E6%A0%B8%E7%9A%84%E4%BA%A7%E5%93%81"><span class="nav-number">1.0.1.</span> <span class="nav-text">一个硬核的产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E5%AE%89%E7%A8%B3%E7%9A%84%E4%BA%A7%E5%93%81"><span class="nav-number">1.0.2.</span> <span class="nav-text">一个安稳的产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E5%A4%9F%E5%BE%97%E7%9D%80%E7%9A%84%E4%BA%A7%E5%93%81"><span class="nav-number">1.0.3.</span> <span class="nav-text">一个够得着的产品</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E4%B8%80%E5%9D%97%E5%9C%9F%E5%9C%B0%E5%BC%80%E5%A7%8B"><span class="nav-number">1.1.</span> <span class="nav-text">从一块土地开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E6%AE%B5%EF%BC%81%E5%9C%B0%E6%AE%B5%EF%BC%81%E8%BF%98%E6%98%AF%E5%9C%B0%E6%AE%B5%EF%BC%81"><span class="nav-number">1.1.1.</span> <span class="nav-text">地段！地段！还是地段！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E5%BC%8F%E4%BA%BA%E6%83%85%E4%BA%A4%E6%98%93%E5%92%8C%E5%B8%82%E5%9C%BA%E5%8C%96%E7%9A%84%E5%9C%9F%E5%9C%B0"><span class="nav-number">1.1.2.</span> <span class="nav-text">日式人情交易和市场化的土地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%9F%E5%9C%B0%E4%B8%8A%E6%B0%B8%E8%BF%9C%E6%9C%89%E4%B8%8A%E5%8F%A4%E9%81%97%E4%BA%A7"><span class="nav-number">1.1.3.</span> <span class="nav-text">土地上永远有上古遗产</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E5%BC%A0%E4%BA%89%E8%AE%BA%E4%BA%86%E5%BE%88%E4%B9%85%E7%9A%84%E5%9B%BE%E7%BA%B8"><span class="nav-number">1.1.4.</span> <span class="nav-text">一张争论了很久的图纸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%B7%E6%AC%BE%E9%A3%8E%E6%B3%A2"><span class="nav-number">1.1.5.</span> <span class="nav-text">贷款风波</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%89%B0%E9%9A%BE%E7%9A%84%E5%BB%BA%E9%80%A0%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">艰难的建造流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E8%AF%B4%E8%AF%B4%E6%88%91%E4%BB%AC%E7%9A%84%E5%BA%95%E6%96%99"><span class="nav-number">1.2.1.</span> <span class="nav-text">先说说我们的底料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%8D%E8%AF%B4%E8%AF%B4%E6%88%91%E4%BB%AC%E5%8A%A0%E7%9A%84%E5%8D%A4%E8%9B%8B"><span class="nav-number">1.2.2.</span> <span class="nav-text">再说说我们加的卤蛋</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BD%93%E5%8C%96%E5%8E%A8%E6%88%BF"><span class="nav-number">1.2.3.</span> <span class="nav-text">一体化厨房</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%8A%E5%88%AB%E8%9C%B7%E6%9B%B2%E7%9A%84%E6%B5%B4%E7%BC%B8"><span class="nav-number">1.2.4.</span> <span class="nav-text">告别蜷曲的浴缸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B2%E6%B9%BF%E7%BB%88%E4%BA%8E%E5%AE%8C%E5%85%A8%E5%88%86%E7%A6%BB"><span class="nav-number">1.2.5.</span> <span class="nav-text">干湿终于完全分离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E5%A4%9A%E9%80%81%E4%BA%86%E4%B8%80%E4%B8%AA%E9%98%B3%E5%8F%B0"><span class="nav-number">1.2.6.</span> <span class="nav-text">我们多送了一个阳台</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%82%E5%9C%BA%E8%A1%A8%E7%8E%B0"><span class="nav-number">1.3.</span> <span class="nav-text">市场表现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%9C%82%E6%8B%A5%E8%80%8C%E6%9D%A5%E7%9A%84%E7%A7%9F%E5%AE%A2"><span class="nav-number">1.3.1.</span> <span class="nav-text">蜂拥而来的租客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%A0%E9%81%93%E5%92%8C%E4%B8%AD%E4%BB%8B%E4%B9%8B%E8%8B%A6"><span class="nav-number">1.3.2.</span> <span class="nav-text">渠道和中介之苦</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%94%99%E7%9A%84%E6%8B%BC%E5%A4%9A%E5%A4%9A%E6%83%B3%E6%B3%95"><span class="nav-number">1.3.3.</span> <span class="nav-text">一个不错的拼多多想法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A6%E5%8F%B3%E8%B5%84%E6%9C%AC"><span class="nav-number">1.3.4.</span> <span class="nav-text">左右资本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%B0%E6%83%91%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85"><span class="nav-number">1.3.5.</span> <span class="nav-text">困惑的投资者</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E6%80%BB%E7%BB%93"><span class="nav-number">1.4.</span> <span class="nav-text">最后总结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="猫总"
+      src="https://i.typlog.com/catman/8393193578_104035.jpg?x-oss-process=style/ss">
+  <p class="site-author-name" itemprop="name">猫总</p>
+  <div class="site-description" itemprop="description">人在陆家嘴，已经肉身移民法国和日本。海带级金融从业人员，业余金融分析师，专业母猫配种。V2EX老成员，现在已经穷的一无所有，还剩下125万贷款。我买房都是为了我的猫！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/7312331173" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;7312331173" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/catmamgo" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;catmamgo" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.clubhouse.com/@catmangox" title="Clubhouse → https:&#x2F;&#x2F;www.clubhouse.com&#x2F;@catmangox" rel="noopener" target="_blank"><i class="fas fa-microphone-alt fa-fw"></i>Clubhouse</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.yuque.com/catmanclub" title="yuque → https:&#x2F;&#x2F;www.yuque.com&#x2F;catmanclub" rel="noopener" target="_blank"><i class="fas fa-dove fa-fw"></i>yuque</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2012-2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">猫总</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="https://catman.app/js/utils.js"></script>
+
+<script src="https://catman.app/js/motion.js"></script>
+
+
+<script src="https://catman.app/js/schemes/pisces.js"></script>
+
+
+<script src="https://catman.app/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
